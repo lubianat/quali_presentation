@@ -4,12 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="lubianat">
+	<link rel="icon" type="image/x-icon" href="https://irp.cdn-website.com/683b19b1/site_favicon_16_1620827394581.ico">
+	<title>Organizing the knowledge about cell types via Wikidata</title>
 
-	<title>reveal.js</title>
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
 	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="css/demo.css">
+	<link rel="stylesheet" href="plugin/simplemenu/simplemenu.css">
 	<script src="plugin/simplemenu/simplemenu.js"></script>
 
 	<!-- Theme used for syntax highlighted code -->
@@ -27,6 +32,12 @@
 			clear: both;
 			display: table;
 		}
+
+		.ref {
+			font-size: large;
+
+
+		}
 	</style>
 </head>
 
@@ -37,9 +48,11 @@
 		</div>
 		<div class="slides">
 
+			<!------------->
+			<!--- Title --->
+			<!------------->
 
-			<!--- Title slide --->
-			<section>
+			<section class="center" data-transition="fade" data-name="Title">
 				<h2>Organizing the knowledge about cell types via Wikidata</h2>
 
 				<div align="left">
@@ -47,15 +60,14 @@
 					<p>Advisor: Prof. Helder Nakaya</p>
 
 				</div>
-
 				<div class="row">
 					<div class="column">
-						<img src="https://irp.cdn-website.com/683b19b1/dms3rep/multi/LOGO_CSBL.svg" height="200"
-							width="400">
+						<img src="https://irp.cdn-website.com/683b19b1/dms3rep/multi/LOGO_CSBL.svg" height="100"
+							width="200">
 					</div>
 					<div class="column">
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Wikidata-logo-en.svg/800px-Wikidata-logo-en.svg.png">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Wikidata-logo-en.svg/800px-Wikidata-logo-en.svg.png"
+							height="100">
 					</div>
 				</div>
 
@@ -63,11 +75,102 @@
 					<p>Feb 23rd 2022 - São Paulo - SP</p>
 				</div>
 
+			</section>
+
+			<!------------------>
+			<!-- Introduction -->
+			<!------------------>
+
+			<section class="center" data-transition="fade" data-name="Introduction">
+				<section>
+					<h2>How many cell types have been described?</h2>
+				</section>
+
+				<section>
+					<img src="./img/how_many_cells_google.png">
+				</section>
+
+				<section>
+					<img src="./img/how_many_cells_hca.png">
+				</section>
+
+				<section>
+					<img src="https://obofoundry.org/images/CL-logo.jpg">
+					<p>"2,311 terms covering all major cell types"</p>
+					<p class='ref'>
+						<a href="https://doi.org/10.1038/S41556-021-00787-7">
+							David Osumi-Sutherland et al, Nat. Cell Biol., 2021
+						</a>
+					</p>
+				</section>
+
+				<section>
+					<p>What do we mean by "cell type"?</p>
+
+					<img src="./img/conceptual_definition_cell_systems.png">
+					<p class='ref'>
+						<a href="https://doi.org/10.1016/J.CELS.2017.03.006">
+							Cell Systems, 2021
+						</a>
+					</p>
+				</section>
 
 			</section>
 
+			<section class="center" data-transition="fade" data-name="Methodology">
+				<h2>DEMO</h2>
+			</section>
 
-			<section>Slide 2</section>
+			<section class="center" data-transition="fade" data-name="Concept of Cell Type">
+				<h2>DEMO</h2>
+			</section>
+
+
+			<section class="center" data-transition="fade" data-name="PanglaoDB">
+				<h2>DEMO</h2>
+			</section>
+
+
+			<section class="center" data-transition="fade" data-name="Wikidata Bib">
+				<h2>DEMO</h2>
+			</section>
+
+			<section class="center" data-transition="fade" data-name="Conclusion">
+				<h2>DEMO</h2>
+			</section>
+
+			<section class="center" data-transition="fade" data-name="Acknowledgements">
+				<section>
+					<h2>DEMO</h2>
+				</section>
+
+				<section class="center" data-transition="fade">
+					<h2>Organizing the knowledge about cell types via Wikidata</h2>
+
+					<div align="left">
+						<p>Student: Tiago Lubiana</p>
+						<p>Advisor: Prof. Helder Nakaya</p>
+
+					</div>
+					<div class="row">
+						<div class="column">
+							<img src="https://irp.cdn-website.com/683b19b1/dms3rep/multi/LOGO_CSBL.svg" height="100"
+								width="200">
+						</div>
+						<div class="column">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Wikidata-logo-en.svg/800px-Wikidata-logo-en.svg.png"
+								height="100">
+						</div>
+					</div>
+
+					<div align="center">
+						<p>Feb 23rd 2022 - São Paulo - SP</p>
+					</div>
+
+				</section>
+			</section>
+
+
 		</div>
 	</div>
 
@@ -82,12 +185,14 @@
 		Reveal.initialize({
 			hash: true,
 			slideNumber: true,
-			simplemenu: { auto: true },
-			progress: true,
-
-
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, Simplemenu]
+			transition: "fade",
+			simplemenu: {
+				auto: true
+			},
+			plugins: [
+				Simplemenu,
+				RevealHighlight
+			]
 		});
 	</script>
 </body>
