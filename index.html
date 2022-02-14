@@ -26,6 +26,11 @@
 			padding: 5px;
 		}
 
+		.column2 {
+			float: left;
+			width: 50%;
+		}
+
 		/* Clear floats after image containers */
 		.row::after {
 			content: "";
@@ -53,19 +58,17 @@
 			<!------------->
 
 			<section class="center" data-transition="fade" data-name="Title">
-				<h2>Organizing the knowledge about cell types via Wikidata</h2>
-
+				<h3>Building a biological knowledge graph via Wikidata with a focus on the Human Cell Atlas.</h3>
 				<div align="left">
 					<p>Student: Tiago Lubiana</p>
 					<p>Advisor: Prof. Helder Nakaya</p>
 
 				</div>
 				<div class="row">
-					<div class="column">
-						<img src="https://irp.cdn-website.com/683b19b1/dms3rep/multi/LOGO_CSBL.svg" height="100"
-							width="200">
+					<div class="column2">
+						<img src="https://irp.cdn-website.com/683b19b1/dms3rep/multi/LOGO_CSBL.svg" height="100">
 					</div>
-					<div class="column">
+					<div class="column2">
 						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Wikidata-logo-en.svg/800px-Wikidata-logo-en.svg.png"
 							height="100">
 					</div>
@@ -82,17 +85,32 @@
 			<!-------------------->
 
 			<section class="center" data-transition="fade" data-name="Introduction">
-				<section>[present the HUMAN CELL ATLAS] </section>
+				<section>
+
+					<img
+						src="https://www.broadinstitute.org/files/styles/gsp_image__1112x410_/public/generic-page/images/2016/Banner_HCA_1112x410.jpg?itok=frtpi6B4"></img>
+
+					<div class="row">
+						<div class="column2">
+							<img src="https://irp-cdn.multiscreensite.com/683b19b1/HCB-BRAZIL-v4.jpg" width="400">
+						</div>
+
+						<div class="column2" style="align-content: right;">
+							<img src="img/jaguar.png" width="400">
+						</div>
+					</div>
+				</section>
+
 				<section>
 					<h2>How many cell types have been described?</h2>
 				</section>
 
 				<section>
-					<img src="./img/how_many_cells_google.png">
+					<img width="90%" src="./img/how_many_cells_google.png">
 				</section>
 
 				<section>
-					<img src="./img/how_many_cells_hca.png">
+					<img width="90%" src="./img/how_many_cells_hca.png">
 				</section>
 
 				<section>
@@ -320,28 +338,76 @@
 				</section>
 
 				<section>
-					Resource Description Framework and OBO ontologies
+					OBO: Resource Description Framework (RDF)
 					<br />
-					<p style="font-size: medium; text-align: left;">mini_cl.ttl</p>
-					<script src="https://gist.github.com/lubianat/8cfb3a19732038c761370510c9f62071.js"></script>
-
+					<p>"All plasmacytoid dendritic cells are dendritic cells." </p>
+					<div width="400">
+						<script src="https://gist.github.com/lubianat/8cfb3a19732038c761370510c9f62071.js"></script>
+					</div>
 				</section>
 
-				<section> [protege, multiple namespaces, GitHub protocols etc] </section>
+				<section> OBO: Knowledge Management via Protege
+					<img height="400"
+						src="https://protege.stanford.edu/assets/img/screenshots/desktopprotege-screenshot-5.jpg">
+				</section>
 
-				<section>
-					[Wikidata's model for knowledge management]
+				<section> OBO: Ontology management via GitHub
+					<img height="300" src="img/cl_github.png">
 				</section>
 
 				<section>
-					[Wikidata as a KG for the life sciences]
+					Wikidata: Item model
+					<img height="450"
+						src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Datamodel_in_Wikidata.svg">
+				</section>
+				<section>
+					<p>Wikidata: GUI live editing</p>
+					<iframe width="80%" height="500" src="https://www.wikidata.org/wiki/Q67801129?safemode=1"></iframe>
 				</section>
 
 				<section>
-					[Goals of the PhD project]
-					- Find all classes of cells relevant to the Human Cell Atlas
-					- Organize knowledge in an accessible and scalable format
-					- Advance Wikidata as a tool for the life sciences community
+					<div class="row">
+						<div class="column2" style="align-content: right;font-size: 35px;">
+							<h4>OBO Foundry</h4>
+							<img height=100 src="https://obofoundry.org/images/foundrylogo.png">
+							<ul>
+								<li>Steep learning curve</li>
+								<li>Many namespaces (CL, GO ...)</li>
+								<li>Single language (English)</li>
+								<li>Built by experts (consistent)</li>
+
+							</ul>
+
+						</div>
+
+						<div class="column2" style="align-content: right;font-size: 35px;">
+							<h4>Wikidata</h4>
+							<img height=100
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Wikidata-logo-en.svg/800px-Wikidata-logo-en.svg.png">
+							<ul>
+								<li>Quick onboarding </li>
+								<li>Single namespace</li>
+								<li>Support for +200 languages</li>
+								<li>Built by everyone (diverse)</li>
+
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<p>Wikidata is increasingly used by the life sciences community</p>
+					<img heigh="50%"
+						src="https://iiif.elifesciences.org/lax/52614%2Felife-52614-fig1-v1.tif/full/1500,/0/default.jpg">
+				</section>
+
+				<section>
+					<p>Goals of the PhD project</p>
+					<ul style="font-size: 40px;">
+						<li>Find all classes of cells relevant to the Human Cell Atlas</li>
+						<li>Organize the knowledge using knowledge graphs</li>
+						<li>Advance Wikidata as a tool for the life sciences</li>
+					</ul>
 				</section>
 			</section>
 
