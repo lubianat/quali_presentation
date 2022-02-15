@@ -31,6 +31,12 @@
 			width: 50%;
 		}
 
+		.scrollable {
+			height: 350px;
+			/* or any value */
+			overflow-y: auto;
+		}
+
 		/* Clear floats after image containers */
 		.row::after {
 			content: "";
@@ -400,7 +406,6 @@
 					<img heigh="50%"
 						src="https://iiif.elifesciences.org/lax/52614%2Felife-52614-fig1-v1.tif/full/1500,/0/default.jpg">
 				</section>
-
 				<section>
 					<p>Goals of the PhD project</p>
 					<ul style="font-size: 40px;">
@@ -416,7 +421,16 @@
 			<!------------------->
 
 			<section class=" center" data-transition="fade" data-name="Methodology">
-				<section>[Research action]</section>
+				<section>
+					<p>Action research</p>
+					<p style="font-size: 35px;">"transformative change through the simultaneous process of taking action
+						and doing research, which are linked together by critical reflection."
+					</p>
+					<a class="ref"
+						href="https://en.wikipedia.org/wiki/Action_research">https://en.wikipedia.org/wiki/Action_research
+					</a>
+
+				</section>
 				<section>
 
 					3 pillars of the project:
@@ -437,9 +451,26 @@
 						</div>
 					</div>
 				</section>
-				<section>[Cell Ontology]</section>
-				<section>[Wikidata]</section>
-				<section>[Wikidata Bib + Biocuration]</section>
+				<section>
+					<img src="https://obofoundry.org/images/CL-logo.jpg" width="200">
+					<ul>
+						<li> Largest collection of multi-species cell types </li>
+						<li> Open to join on GitHub and Slack </li>
+						<li> 2x monthly meetings + events </li>
+						<li> .owl RDF file edited in Protege and reviewed on GitHub</li>
+					</ul>
+				</section>
+
+				<section>
+					<p> Wikidata Bib: surfing the tsunami</p>
+					<img src="img/tsunami.png" width="300">
+					<ul>
+						<li> Reading discipline (2 articles/day) </li>
+						<li> Wikidata-based literature management</li>
+						<li> Systematic knowledge extraction</li>
+					</ul>
+				</section>
+
 			</section>
 
 			<!---------------------------->
@@ -459,8 +490,31 @@
 					</p>
 				</section>
 
-				<section>[archetypes, sensu stricto cell types, infratypes and technotypes]</section>
-				<section>[MLT and a simplified view of cell type for the scope of the project]</section>
+				<section>
+					<p>Theoretical considerations on the concept of cell type </p>
+					<img
+						src="https://raw.githubusercontent.com/lubianat/fapesp_report_1/main/content/images/archetypes_hn.jpg">
+
+				</section>
+				<section>
+					<p>Practical considerations - Multi Level Theory </p>
+					<img
+						src="https://github.com/lubianat/multilevel_ontology_drawings/blob/master/human_gandhi.png?raw=true">
+
+				</section>
+				<section>
+					<p>Practical considerations - Multi Level Theory </p>
+					<img
+						src="https://github.com/lubianat/multilevel_ontology_drawings/blob/master/cell_gandhi_zygote.png?raw=true">
+				</section>
+
+				<section>
+					<p>Pragmatic definition </p>
+					<br />
+					<p style="font-size: 40px;">a cell type is any <strong>class</strong> of cells described by a domain
+						expert
+					</p>
+				</section>
 
 			</section>
 
@@ -469,13 +523,40 @@
 			<!----------------->
 
 			<section class="center" data-transition="fade" data-name="PanglaoDB">
-				<section>adapt slides from <a
-						href="https://docs.google.com/presentation/d/1ZvbIJKhPtlzMHKZqLZDezdVTtYkRiOSzLHllCvUiIS4/edit#slide=id.p">here</a>
+				<section>
+					<p>Introduction</p>
+					<img height="400" src="img/panglao_3_stars.png">
+					<p class='ref'>
+						<a href="https://doi.org/10.1093/database/baz046">
+							Oscar Franzen et al, Database, 2019
+						</a>
+					</p>
 				</section>
 				<section>
-					Information is added to Wikidata
+					<p>Methods</p>
+					<img
+						src="https://github.com/lubianat/fapesp_report_1/blob/main/content/images/poster_ISCB_intro.png?raw=true">
+				</section>
+				<section>
+					Information on Wikidata
 					<iframe width="100%" height="400" src="https://www.wikidata.org/wiki/Q101404947"></iframe>
 				</section>
+				<section>
+					Query: diseases related to beta cells
+					<br>
+					<p>SPARQL code </p>
+					<div class="scrollable">
+						<script src="https://gist.github.com/lubianat/0d1afafff6e21e1af01e70b3b08911c1.js"></script>
+					</div>
+				</section>
+				<section>
+					Query: diseases related to beta cells
+					<br>
+					<iframe style="width: 80vw; height: 50vh; border: none;"
+						src="https://query.wikidata.org/embed.html#SELECT%20%3FcellTypeLabel%20%3FdiseaseLabel%20%0A%28COUNT%28DISTINCT%20%3FdiseaseGene%29%20AS%20%3Fcount%29%20%0A%28GROUP_CONCAT%28DISTINCT%20%3FgeneLabel%3B%20SEPARATOR%3D%22%2C%20%22%29%20AS%20%3Fgenes%29%0AWHERE%20%0A%7B%0A%20%20wd%3AQ101405087%20wdt%3AP8872%20%3FdiseaseGene%20.%20%20%20%20%23%20human%20pancreatic%20beta%20cell%20--%3E%20%20has%20marker%20--%3E%20%20gene%0A%20%20%3Fdisease%20wdt%3AP2293%20%3FdiseaseGene%20.%20%20%20%20%20%20%20%20%20%23%20disease%20--%3E%20genetic%20association%20--%3E%20gene%0A%20%20%0A%20%20wd%3AQ101405087%20rdfs%3Alabel%20%3FcellTypeLabel%20.%0A%20%20%3Fdisease%20rdfs%3Alabel%20%3FdiseaseLabel%20.%0A%20%20%3FdiseaseGene%20%20%20rdfs%3Alabel%20%3FgeneLabel%20.%0A%0A%20%20FILTER%28LANG%28%3FcellTypeLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FdiseaseLabel%29%20%3D%20%22en%22%29%0A%20%20FILTER%28LANG%28%3FgeneLabel%29%20%3D%20%22en%22%29%0A%20%20%0A%20%7D%0A%0AGROUP%20BY%20%3FdiseaseLabel%20%3FcellTypeLabel%20%0AORDER%20BY%20DESC%28%3Fcount%29"
+						referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+				</section>
+
 			</section>
 
 			<!-------------------->
@@ -483,30 +564,43 @@
 			<!-------------------->
 
 			<section class="center" data-transition="fade" data-name="Wikidata Bib">
-				<section>Wikidata Bib - Why</section>
-				<section>[Query for articles to add to list]</section>
-
-				<section>[Reading station]</section>
 				<section>
-					Articles are screened for cell types
+					<img height="100"
+						src="https://raw.githubusercontent.com/wikidatabib/rootstock/main/images/logo.png">
+
+					<ul>
+						<li> Fully open-source system</li>
+						<li> Based on: Python, Wikidata, GitHub and Markdown</li>
+						<li> Increases throughput </li>
+						<li> Provide analytics on reading </li>
+					</ul>
+				</section>
+
+				<section>
+					<p>1. Obtain list of articles via Wikidata </p>
+					<br />
+					<iframe style="width: 80vw; height: 50vh; border: none;"
+						src="https://query.wikidata.org/embed.html#SELECT%20%3Fwork%20%3FworkLabel%20WHERE%20%7B%0A%20%20values%20%3Fjournal%20%7Bwd%3AQ180445%20wd%3AQ192864%20wd%3AQ2000008%20wd%3AQ655814%20wd%3AQ573880%7D.%0A%20%20%3Fwork%20%20wdt%3AP921%20wd%3AQ105406038.%0A%20%20%3Fwork%20%20wdt%3AP1433%20%3Fjournal.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%0A"
+						referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+				</section>
+
+				<section>
+					<p>2. Generate annotation station on demand (2/day) </p>
+					<img height="400"
+						src="https://github.com/lubianat/quali_phd/blob/main/content/images/note_taking_station_annotated.png?raw=true">
+
+				</section>
+				<section>
+					<p>4. Add articles read to online dashboard (automatic)</p>
+					<iframe width="100%" height="500" src="https://lubianat.github.io/wikidata_bib/"></iframe>
+				</section>
+				<section>
+					<p>5. Screen articles for cell types </p>
 					<iframe width="100%" height="500"
 						src="https://docs.google.com/spreadsheets/d/1SPgKpMEwHJSD-7M9I2hyVLJo7dlNk8maiL4SQhBGtXs/edit#gid=0"></iframe>
 				</section>
 				<section>
-					Articles read are added to online dashboard
-					<iframe width="100%" height="500" src="https://lubianat.github.io/wikidata_bib/"></iframe>
-				</section>
-
-				<section>
-					[Cell types are connected to Wikidata - summmary]
-				</section>
-
-				<section>
-					[Mix'n'match]
-				</section>
-
-				<section>
-					[Query cell types on Wikidata]
+					<p> [6. Add cell types to wikidata]</p>
 				</section>
 
 			</section>
@@ -544,7 +638,7 @@
 
 			<section class="center" data-transition="fade" data-name="Acknowledgements">
 				<section>
-					DEMO
+					[Acknowledgements]
 				</section>
 
 				<section class="center" data-transition="fade">
